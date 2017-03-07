@@ -27,7 +27,7 @@ app.use(bodyParser.json({ type: '*/*' }));
 router(app);
 
 // Server setup
-const port = process.env.PORT || 3091;
+const port = process.env.PORT || 3000;
 
 /*
 http is a native node lib - working very low level with HTTP requests
