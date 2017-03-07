@@ -11,7 +11,7 @@ const cors = require('cors');
 
 
 // DB setup
-mongoose.connect('mongodb://localhost:auth/auth');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:auth/auth');
 
 //App setup
 /*
