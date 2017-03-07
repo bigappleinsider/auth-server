@@ -1,4 +1,13 @@
 # Express js
+[https://the-auth-server.herokuapp.com](https://the-auth-server.herokuapp.com)
+[https://the-auth-client.herokuapp.com](https://the-auth-client.herokuapp.com)
+
+## Environment variables
+```
+MONGODB_URI: YOUR_MONGO_CONNECTION
+SECRET: YOUR_SECRET_SALT
+```
+
 ```
 npm i -S express mongoose morgan body-parser nodemon bcrypt-nodejs
 npm i -S jwt-simple passport passport-jwt passport-local
