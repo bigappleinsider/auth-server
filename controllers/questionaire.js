@@ -13,6 +13,16 @@ exports.get = function(req, res, next) {
       });
   }
   else{
+    const params = {
+      'page': req.query.page || 1,
+      'limit': req.query.limit || 10
+    };
+    Questionaire
+      .paginate({}, params, function(err, results){
+        if(err) { return next(err); }
+        res.json(results);
+      });
+    /*
     Questionaire
       .find()
       .limit(10)
@@ -20,6 +30,8 @@ exports.get = function(req, res, next) {
         if(err) { return next(err); }
         res.json(items);
       });
+      */
+
   }
 };
 
