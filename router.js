@@ -1,5 +1,7 @@
 const Authentication = require('./controllers/authentication');
 const Questionaire = require('./controllers/questionaire');
+const Survey = require('./controllers/survey');
+
 
 const passportService = require('./services/passport');
 const passport = require('passport')
@@ -16,6 +18,9 @@ module.exports = function(app){
   app.post('/questionaire', requireAuth, Questionaire.create);
   app.patch('/questionaire/:id', requireAuth, Questionaire.update);
   app.delete('/questionaire/:id', requireAuth, Questionaire.delete);
+
+  app.get('/survey/:id?', requireAuth, Survey.get);
+  app.post('/survey/:id', requireAuth, Survey.create);
 
 
   app.post('/signin', requireSignin, Authentication.signin);

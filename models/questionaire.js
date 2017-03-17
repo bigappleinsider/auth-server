@@ -13,6 +13,6 @@ const questionaireSchema = new Schema({
 });
 questionaireSchema.plugin(mongoosePaginate);
 
-const ModelClass = mongoose.model('questionaire', questionaireSchema);
+const ModelClass = mongoose.model('Questionaire', questionaireSchema);
 
 module.exports = ModelClass;
