@@ -19,7 +19,7 @@ module.exports = function(app){
   app.patch('/questionaire/:id', requireAuth, Questionaire.update);
   app.delete('/questionaire/:id', requireAuth, Questionaire.delete);
 
-  app.get('/survey/:id?', requireAuth, Survey.get);
+  app.get('/survey/:id', requireAuth, Survey.get);
   app.post('/survey/:id', requireAuth, Survey.create);
 
 

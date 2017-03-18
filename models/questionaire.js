@@ -9,7 +9,7 @@ const question = new Schema({
 
 const questionaireSchema = new Schema({
   name: { type: String, unique: true, required: true },
-  questions: [{text: { type: String, required: true }}]
+  questions: [{questionText: { type: String, required: true }}]
 });
 questionaireSchema.plugin(mongoosePaginate);
 

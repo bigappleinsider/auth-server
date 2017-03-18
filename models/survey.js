@@ -8,7 +8,7 @@ const surveySchema = new Schema({
   createdOn: { type: Date, default: Date.now },
   questions: [
     {
-      question: { type: String, required: true },
+      questionText: { type: String, required: true },
       answer: { type: String, required: true }
     }
   ]
