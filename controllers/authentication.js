@@ -7,6 +7,7 @@ read in users, if one doesn't exist, save
 const jwt = require('jwt-simple');
 const User = require('../models/user');
 const config = require('../config');
+const _ = require('underscore');
 
 //JWT is a convention, sub is short for subject - who this token belongs to
 //iat  - is created at
@@ -17,7 +18,8 @@ function tokenForUser(user) {
 
 exports.signin = function(req, res, next) {
   //user already authenticated
-  res.send({ token: tokenForUser(req.user) });
+  const user = _.pick(req.user, 'email', '_id');
+  res.json({token: tokenForUser(req.user), user: user});
 }
 
 exports.signup = function(req, res, next) {
@@ -43,8 +45,8 @@ exports.signup = function(req, res, next) {
 
     user.save(function(err) {
       if (err) { return next(err); }
-
-      res.json({token: tokenForUser(user)});
+      const user = _.pick(req.user, 'email', '_id');
+      res.json({token: tokenForUser(user), user: user});
     });
   });
 }
